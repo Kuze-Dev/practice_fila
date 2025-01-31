@@ -26,6 +26,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+          
             ->login()
             ->colors([
                 'danger' => Color::Rose,
@@ -36,7 +37,8 @@ class AdminPanelProvider extends PanelProvider
                 'warning' => Color::Orange,
             ])
             ->font('Poppins')
-            ->brandName('KRM WEB WORK\'S')
+            ->brandName('MJ WEB WORK\'S')
+            ->plugin(\TomatoPHP\FilamentPWA\FilamentPWAPlugin::make())
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
