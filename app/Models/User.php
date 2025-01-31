@@ -6,9 +6,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Filament\Models\Contracts\HasFilamentAccess; 
 
-class User extends Authenticatable implements HasFilamentAccess
+class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -45,9 +44,5 @@ class User extends Authenticatable implements HasFilamentAccess
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-    public function canAccessPanel(Panel $panel): bool
-    {
-        return true;
     }
 }
